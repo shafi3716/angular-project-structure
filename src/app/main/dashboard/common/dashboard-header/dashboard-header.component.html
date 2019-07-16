@@ -1,0 +1,42 @@
+<mat-toolbar>
+
+    <div class="header-menu">
+        <button mat-icon-button  matTooltip="Toggle Sidebar" (click)="toggleOpened()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <div class="logo" routerLink="/">
+            <span>Logo</span>
+        </div>
+    </div>
+
+    <div class="menu">
+        <ul>
+            <li>
+                <button mat-icon-button [matMenuTriggerFor]="menu" disableRipple class="account">
+                    <div class="avatar">
+                        <img src="/assets/images/avatar.jpg" />
+                        <span>Shafi</span>
+                        <mat-icon color="primary">keyboard_arrow_down</mat-icon>
+                    </div>
+                </button>
+
+                <mat-menu #menu="matMenu">
+                    <ng-template matMenuContent>
+                        <button routerLink="/" mat-menu-item>
+                            <mat-icon color="primary">home</mat-icon>
+                            <span>Marketplace</span>
+                        </button>
+                        <button mat-menu-item (click)="toggleNavPosition()">
+                            <mat-icon color="primary">toggle_on</mat-icon>
+                            <span>Toggle Sidebar Position</span>
+                        </button>
+                        <button mat-menu-item (click)="logout()">
+                            <mat-icon color="primary">input</mat-icon>
+                            <span>Logout</span>
+                        </button>
+                    </ng-template>
+                </mat-menu>
+            </li>
+        </ul>
+    </div>
+</mat-toolbar>
