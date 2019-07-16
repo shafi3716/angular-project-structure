@@ -1,25 +1,6 @@
 
-export const Dashboard: any = [
+export const Dashboard: any[] = [
 
-    {
-        title: 'menu',
-        type: 'group_menu',
-        icon: 'keyboard_arrow_down',
-        children: [
-            {
-                title: 'Marketplace',
-                type: 'item',
-                icon: 'home',
-                url: '/',
-            },
-            {
-                title: 'Logout',
-                type: 'item',
-                icon: 'input',
-                method: 'logout'
-            }
-        ]
-    },
     {
         title: 'Folders',
         type: 'group',
@@ -59,6 +40,25 @@ export const Dashboard: any = [
                 type: 'item',
                 icon: 'folder',
                 url: '/dashboard'
+            }
+        ]
+    },
+    {
+        title: 'menu',
+        type: 'group_menu',
+        icon: 'keyboard_arrow_down',
+        children: [
+            {
+                title: 'Marketplace',
+                type: 'item',
+                icon: 'home',
+                url: '/',
+            },
+            {
+                title: 'Logout',
+                type: 'item',
+                icon: 'input',
+                method: 'logout'
             }
         ]
     }
