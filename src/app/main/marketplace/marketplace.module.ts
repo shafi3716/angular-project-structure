@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MarketplaceComponent } from './marketplace.component';
-import { HeaderModule } from './common/header/header.module';
-import { FooterModule } from './common/footer/footer.module';
+import { MarketplaceCommonModule } from './common/marketplace-common.module';
 
 const routes: Routes = [
   {
@@ -35,8 +34,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    HeaderModule,
-    FooterModule
+    MarketplaceCommonModule
   ]
 })
 export class MarketplaceModule { }

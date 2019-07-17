@@ -1,11 +1,9 @@
-import { DashboardFooterModule } from './common/dashboard-footer/dashboard-footer.module';
-import { DashboardHeaderModule } from './common/dashboard-header/dashboard-header.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardSidenavModule } from './common/dashboard-sidenav/dashboard-sidenav.module';
 import { MatModule } from 'src/app/mat.module';
+import { DashboardCommonModule } from './common/dashboard-common.module';
 
 const routes: Routes = [
   {
@@ -26,9 +24,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     MatModule,
-    DashboardHeaderModule,
-    DashboardFooterModule,
-    DashboardSidenavModule
+    DashboardCommonModule
   ]
 })
 export class DashboardModule { }
