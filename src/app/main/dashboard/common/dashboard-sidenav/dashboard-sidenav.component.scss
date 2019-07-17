@@ -1,8 +1,16 @@
 
+.side-bar{
+    background-color: #4b87f51a;
+}
+
+.mat-list-base .mat-subheader {
+    font-weight: 600;
+}
+
 .header-section{
     text-align: center;
     height: 13em;
-    background-color: #e6e6e6;
+    background-color: #4b87f547;
 
     .top{
         height: 64px;
@@ -21,6 +29,7 @@
         .sp-1{
             padding: .5em;
             font-size: 18px;
+            font-weight: bold;
         }
         .sp-2{
             font-size: 14px;
@@ -28,7 +37,7 @@
         img{
             width: 4em;
             border-radius: 50%;
-            border: 1px solid #607d8b;
+            border: 1px solid #d4d4d4;
         }
     }
 }
