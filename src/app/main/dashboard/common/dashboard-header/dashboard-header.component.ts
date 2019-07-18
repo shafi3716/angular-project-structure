@@ -12,6 +12,8 @@ export class DashboardHeaderComponent implements OnInit {
 
   @Output() navBarOpenEvent = new EventEmitter<any>();
   @Output() navPosition = new EventEmitter<any>();
+  // search
+  searchVisibility = false;
 
   constructor(
     private helper: HelperService,
@@ -40,6 +42,16 @@ export class DashboardHeaderComponent implements OnInit {
   toggleNavPosition(): void {
 
     this.navPosition.emit({ toggleNav: true });
+  }
+
+  openSearch(): void {
+    this.searchVisibility = true;
+    console.log(this.searchVisibility);
+  }
+
+  closeSearch(): void {
+    this.searchVisibility = false;
+    console.log(this.searchVisibility);
   }
 
 }

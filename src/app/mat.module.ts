@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Angular Material Components
-import {MatCheckboxModule} from '@angular/material';
+import {MatCheckboxModule, MatBadgeModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -68,6 +68,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatBadgeModule,
     ReactiveFormsModule,
     FormsModule
   ],
@@ -102,6 +103,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatBadgeModule,
     ReactiveFormsModule,
     FormsModule
   ]

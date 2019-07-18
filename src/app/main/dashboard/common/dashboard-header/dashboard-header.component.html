@@ -1,25 +1,42 @@
+
 <mat-toolbar>
 
-    <div class="header-menu">
-        <button mat-icon-button  matTooltip="Toggle Sidebar" (click)="toggleOpened()">
-            <mat-icon>menu</mat-icon>
-        </button>
-        <div class="logo" routerLink="/">
-            <span>Logo</span>
-        </div>
-    </div>
+    <mat-form-field appearance="standard" [ngClass]="!searchVisibility ? 'hidden' : 'visible'">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="Search Anything" autofocus>
+        <mat-icon matPrefix>search</mat-icon>
+        <mat-icon matSuffix (click)="closeSearch()">clear</mat-icon>
+    </mat-form-field>
 
-    <div class="menu">
-        <ul>
-            <li>
+    <div [ngClass]="searchVisibility ? 'toolbar-item hidden' : 'toolbar-item visible'">
+        <div class="header-menu">
+            <button mat-icon-button  matTooltip="Toggle Sidebar" (click)="toggleOpened()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <button mat-icon-button routerLink="/" matTooltip="Back to marketplace" class="mobileOnly">
+                <mat-icon >home</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon matBadge="2" matBadgePosition="after" matTooltip="Notification">notifications_none</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon matBadge="5" matBadgePosition="after" matTooltip="Mail">mail_outline</mat-icon>
+            </button>
+        </div>
+    
+        <div class="menu">
+            <button mat-icon-button matTooltip="Search" (click)="openSearch()">
+                <mat-icon>search</mat-icon>
+            </button>
+           <div class="account" matTooltip="My Account">
                 <button mat-icon-button [matMenuTriggerFor]="menu" disableRipple class="account">
                     <div class="avatar">
                         <img src="/assets/images/avatar.jpg" />
                         <span>Shafi</span>
-                        <mat-icon color="primary">keyboard_arrow_down</mat-icon>
+                        <mat-icon>keyboard_arrow_down</mat-icon>
                     </div>
                 </button>
-
+            
                 <mat-menu #menu="matMenu">
                     <ng-template matMenuContent>
                         <button routerLink="/" mat-menu-item>
@@ -36,7 +53,7 @@
                         </button>
                     </ng-template>
                 </mat-menu>
-            </li>
-        </ul>
+           </div>
+        </div>
     </div>
 </mat-toolbar>

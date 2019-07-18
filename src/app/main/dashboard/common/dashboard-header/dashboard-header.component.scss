@@ -4,27 +4,37 @@ mat-toolbar{
     top: 0;
     left: 0;
     margin: auto;
+    padding-left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 9px rgba(224, 224, 224, 0.6);
+    z-index: 4;
+}
+
+.toolbar-item{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 1em 0 1em;
-    background-color: #ffffff;
-    box-shadow: 0 2px 9px rgba(224, 224, 224, 0.6);
-    z-index: 2;
+}
 
-    ul{
-        display: flex;
-        flex-wrap: wrap;
-        li{
-            padding: 0 1em 0 1em;
-            list-style: none;
-        }
+.mat-form-field{
+    width: 100%;
+    font-size: 14px;
+    padding: 2em;
+    opacity: 1;
+    animation: fadeIn 1s linear;
+    mat-icon:last-child{
+        cursor: pointer;
     }
 }
 
+@keyframes fadeIn {
+    0%,100% { opacity: 0 }
+    50% { opacity: 1 }
+  }
+
 .header-menu{
     display: flex;
-    width: 5.5em;
+    width: 7.5em;
     justify-content: space-between;
     align-items: center;
 
@@ -37,35 +47,39 @@ mat-toolbar{
     }
 }
 
-.account {
-    width: 75px;
-}
-
-.logo{
-    cursor: pointer;
-}
-
-.avatar {
+.menu{
     display: flex;
+    width: 10em;
+    justify-content: space-around;
     align-items: center;
-    justify-content: space-evenly;
-
-    img{
-        width: 40px;
-        min-width: 40px;
-        height: 40px;
-        line-height: 40px;
-        margin: 0 8px 0 0;
-        border-radius: 50%;
-        font-size: 17px;
-        font-weight: 500;
-        text-align: center;
-        color: #fff;
-        border: 2px solid #607d8b91;
+    .avatar {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    
+        img{
+            width: 40px;
+            min-width: 40px;
+            height: 40px;
+            line-height: 40px;
+            margin: 0 8px 0 0;
+            border-radius: 50%;
+            font-size: 17px;
+            font-size: 17px;
+            font-weight: 500;
+            text-align: center;
+            color: #fff;
+            border: 2px solid #607d8b91;
+        }
     }
-
 }
 
-ul li:hover {
-    background-color: #e1e2e1;
-  }
+.mobileOnly{
+    display: none;
+}
+@media only screen and (max-width: 900px) {
+    .mobileOnly{
+        display: block;
+        visibility: visible;
+    }
+}
