@@ -20,17 +20,10 @@ mat-toolbar{
     width: 100%;
     font-size: 14px;
     padding: 2em;
-    opacity: 1;
-    animation: fadeIn 1s linear;
     mat-icon:last-child{
         cursor: pointer;
     }
 }
-
-@keyframes fadeIn {
-    0%,100% { opacity: 0 }
-    50% { opacity: 1 }
-  }
 
 .header-menu{
     display: flex;
@@ -71,15 +64,5 @@ mat-toolbar{
             color: #fff;
             border: 2px solid #607d8b91;
         }
-    }
-}
-
-.mobileOnly{
-    display: none;
-}
-@media only screen and (max-width: 900px) {
-    .mobileOnly{
-        display: block;
-        visibility: visible;
     }
 }

@@ -46,12 +46,10 @@ export class DashboardHeaderComponent implements OnInit {
 
   openSearch(): void {
     this.searchVisibility = true;
-    console.log(this.searchVisibility);
   }
 
   closeSearch(): void {
     this.searchVisibility = false;
-    console.log(this.searchVisibility);
   }
 
 }
