@@ -20,7 +20,6 @@ mat-toolbar{
     width: 100%;
     font-size: 14px;
     padding: 2em;
-    opacity: 1;
     mat-icon:last-child{
         cursor: pointer;
     }
@@ -65,15 +64,5 @@ mat-toolbar{
             color: #fff;
             border: 2px solid #607d8b91;
         }
-    }
-}
-
-.mobileOnly{
-    display: none;
-}
-@media only screen and (max-width: 900px) {
-    .mobileOnly{
-        display: block;
-        visibility: visible;
     }
 }
