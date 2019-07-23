@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,11 +13,13 @@ export class DashboardComponent implements OnInit {
   mode;
   mediaQuery;
 
-  constructor() { }
+  constructor(
+   private media: MediaMatcher
+  ) { 
+    this.mediaQuery = media.matchMedia('(max-width: 900px)');
+   }
 
   ngOnInit() {
-
-    this.mediaQuery = window.matchMedia('(max-width: 900px)');
 
     if(this.mediaQuery.matches === true){
       this.opened = false;
