@@ -3,5 +3,5 @@
   "appName": "Shafi",
   "bundledWebRuntime": false,
   "npmClient": "npm",
-  "webDir": "dist/frontEnd"
+  "webDir": "dist"
 }
