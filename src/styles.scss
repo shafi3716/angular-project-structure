@@ -5,9 +5,14 @@ body{
     background: #F5F5F5;
 }
 
-.snackbar {
+.snackbar-success {
     color: #ffffff;
-    background: #673ab7;
+    background: #4caf50;
+  }
+
+.snackbar-danger {
+    color: #ffffff;
+    background: #f44336;
   }
 
 .hidden{

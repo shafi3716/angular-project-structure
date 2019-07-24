@@ -25,8 +25,8 @@ export class LoginComponent implements OnInit {
   ) {
 
     this.loginForm = this.fb.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
    }
 
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
 
-    if (this.loginForm.valid){
+    if (this.loginForm.valid) {
 
       this.apiCommon.store('auth/login', this.loginForm.value).subscribe(
         res => {
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
               duration: 2500,
               verticalPosition: 'top',
               horizontalPosition: 'right',
-              panelClass: ['snackbar']
+              panelClass: ['snackbar-success']
             });
           }
         }

@@ -23,9 +23,9 @@ export class RegisterComponent implements OnInit {
   ) { 
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-      confirm_password: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirm_password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
@@ -34,7 +34,15 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(): void {
 
-    if (this.registerForm.valid){
+    if (this.registerForm.valid && this.registerForm.get('password').value !== this.registerForm.get('confirm_password').value) {
+      this.snackBar.open('The password doesn\'t match', 'close', {
+        duration: 2500,
+        panelClass: ['snackbar-danger']
+      });
+      return;
+    }
+
+    if (this.registerForm.valid) {
 
       this.apiCommon.store('auth/register', this.registerForm.value).subscribe(
         res => {
@@ -44,7 +52,7 @@ export class RegisterComponent implements OnInit {
               duration: 2500,
               verticalPosition: 'top',
               horizontalPosition: 'right',
-              panelClass: ['snackbar']
+              panelClass: ['snackbar-success']
             });
           }
         }
