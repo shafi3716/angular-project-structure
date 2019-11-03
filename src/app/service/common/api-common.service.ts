@@ -9,10 +9,8 @@ import { HelperService } from './helper.service';
 })
 export class ApiCommonService {
 
-  private baseUrl;
   private apiUrl;
   private headers = {};
-  private fileHeader = {};
 
   constructor(
     private http: HttpClient,

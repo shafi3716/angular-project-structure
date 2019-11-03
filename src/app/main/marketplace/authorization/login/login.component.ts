@@ -35,23 +35,32 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
 
-    if (this.loginForm.valid) {
+    this.snackBar.open('Successfully login.', 'close', {
+      duration: 2500,
+      verticalPosition: 'top',
+      horizontalPosition: 'right',
+      panelClass: ['snackbar-success']
+    });
 
-      this.apiCommon.store('auth/login', this.loginForm.value).subscribe(
-        res => {
-          if (res.status === 'success') {
-            this.storage.setAccessToken(res.token);
-            this.router.navigateByUrl('/dashboard');
-            this.snackBar.open(res.message, 'close', {
-              duration: 2500,
-              verticalPosition: 'top',
-              horizontalPosition: 'right',
-              panelClass: ['snackbar-success']
-            });
-          }
-        }
-      );
-    }
+    this.router.navigateByUrl('/dashboard');
+
+    // if (this.loginForm.valid) {
+
+    //   this.apiCommon.store('auth/login', this.loginForm.value).subscribe(
+    //     res => {
+    //       if (res.status === 'success') {
+    //         this.storage.setAccessToken(res.token);
+    //         this.router.navigateByUrl('/dashboard');
+    //         this.snackBar.open(res.message, 'close', {
+    //           duration: 2500,
+    //           verticalPosition: 'top',
+    //           horizontalPosition: 'right',
+    //           panelClass: ['snackbar-success']
+    //         });
+    //       }
+    //     }
+    //   );
+    // }
   }
 
 }
