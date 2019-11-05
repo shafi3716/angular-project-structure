@@ -10,35 +10,36 @@ import { HelperService } from './helper.service';
 export class ApiCommonService {
 
   private apiUrl;
-  private headers = {};
 
   constructor(
     private http: HttpClient,
     private helper: HelperService
   ) { 
     this.apiUrl = environment.api_url;
-    this.headers = {headers: this.helper.getAuthHeader()};
+   }
 
+   getHeader(){
+    return { headers: this.helper.getAuthHeader() }; 
    }
 
   public get(route): Observable<any> {
     const url = this.apiUrl + route;
-    return this.http.get(url, this.headers);
+    return this.http.get(url, this.getHeader());
   }
 
   public store(route, data): Observable<any> {
     const url = this.apiUrl + route;
-    return this.http.post(url, data, this.headers);
+    return this.http.post(url, data, this.getHeader());
   }
 
   public update(route, data): Observable<any> {
     const url = this.apiUrl + route;
-    return this.http.put(url, data, this.headers);
+    return this.http.put(url, data, this.getHeader());
   }
 
   public delete(route, id): Observable<any> {
     const url = this.apiUrl + route + id;
-    return this.http.delete(url, this.headers);
+    return this.http.delete(url, this.getHeader());
   }
 
 }
